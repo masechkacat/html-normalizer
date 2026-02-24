@@ -1,0 +1,27 @@
+{
+  "name": "html-normalizer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "An isomorphic (Node.js and browser) library that converts HTML from office suites (Word, Google Docs) and email clients into clean, semantic, and safe HTML5 with maximum visual preservation.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "rehype-parse": "^9.0.1",
+    "rehype-stringify": "^10.0.1",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0"
+  }
+}
