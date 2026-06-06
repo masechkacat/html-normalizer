@@ -1,8 +1,9 @@
 import { unified, type Plugin } from 'unified';
 import type { Root } from 'hast';
 import rehypeStringify from 'rehype-stringify';
-import { PreProcessor } from './preprocessor/core.preprocessor';
-import { DEFAULT_RULES } from './preprocessor/rules.preprocessor';
+import rehypeListReconstructor from './plugins/list-reconstructor';
+import { PreProcessor } from './preprocessor/preprocessor';
+import { DEFAULT_RULES } from './preprocessor/preprocessor.rules';
 
 // Строго описываем опции, которые должен принимать любой наш парсер
 export interface ParserOptions {
@@ -51,7 +52,8 @@ export class HtmlNormalizer {
     // 2. Этапы 2-5: Строим AST и прогоняем через плагины Unified
     const unifiedProcessor = unified()
       .use(this.parser, { fragment: true }) 
-      // Здесь позже мы добавим наши кастомные AST плагины:
+      // Применяем наш первый умный AST-плагин!
+      .use(rehypeListReconstructor)
       .use(rehypeStringify); 
 
     const file = unifiedProcessor.processSync(preprocessedHtml);

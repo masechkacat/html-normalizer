@@ -1,4 +1,4 @@
-import type { PreProcessorRule } from './types.preprocessor';
+import type { PreProcessorRule } from './preprocessor.types';
 
 export const DEFAULT_RULES: PreProcessorRule[] = [
   // ==========================================

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { HtmlNormalizer } from '../core/processor';
+import { HtmlNormalizer } from './processor';
 import rehypeParse from 'rehype-parse';
 
 describe('processor', () => {

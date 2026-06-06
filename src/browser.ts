@@ -1,4 +1,4 @@
-import { PreProcessor } from './core/preprocessor/core.preprocessor';
+import { PreProcessor } from './core/preprocessor/preprocessor';
 import { HtmlNormalizer, type HtmlParserPlugin } from './core/processor';
 import { fromDom } from 'hast-util-from-dom';
 

@@ -1,6 +1,6 @@
 import rehypeParse from 'rehype-parse';
 import { HtmlNormalizer } from './core/processor';
-import { PreProcessor } from './core/preprocessor/core.preprocessor';
+import { PreProcessor } from './core/preprocessor/preprocessor';
 
 // Создаем "дефолтный" глобальный инстанс для Node.js
 export const defaultNodeNormalizer = new HtmlNormalizer({

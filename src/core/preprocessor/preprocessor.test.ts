@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { PreProcessor } from '../core/preprocessor/core.preprocessor';
-import { DEFAULT_RULES } from '../core/preprocessor/rules.preprocessor';
+import { PreProcessor } from './preprocessor';
+import { DEFAULT_RULES } from './preprocessor.rules';
 
 describe('PreProcessor', () => {
   let processor: PreProcessor;
