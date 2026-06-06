@@ -15,9 +15,10 @@
 
 ## 2. Стек технологий
 - **Язык:** TypeScript (Strict mode).
-- **Платформа:** Isomorphic (поддержка Browser и Node.js).
+- **Платформа:** Isomorphic (поддержка Browser и Node.js, раздельные точки входа/адаптеры).
 - **Core (AST):** Экосистема `unified` + `rehype`.
-  - `rehype-parse`: Парсинг HTML в AST.
+  - **Парсинг (Node.js):** `rehype-parse` (использует `parse5`).
+  - **Парсинг (Browser):** Нативный `DOMParser` + `hast-util-from-dom` (без тяжелого `parse5`).
   - `unist-util-visit`: Обход дерева.
   - `rehype-stringify`: Сериализация.
   - Собственные плагины для трансформации.
