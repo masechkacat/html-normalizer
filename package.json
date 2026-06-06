@@ -3,11 +3,23 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    "./node": {
+      "import": "./dist/node.js",
+      "require": "./dist/node.cjs",
+      "types": "./dist/node.d.ts"
+    },
+    "./browser": {
+      "import": "./dist/browser.js",
+      "require": "./dist/browser.cjs",
+      "types": "./dist/browser.d.ts"
+    }
+  },
   "description": "An isomorphic (Node.js and browser) library that converts HTML from office suites (Word, Google Docs) and email clients into clean, semantic, and safe HTML5 with maximum visual preservation.",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "build": "tsup src/node.ts src/browser.ts --format cjs,esm --dts --clean",
     "test": "vitest",
     "preview": "vite preview"
   },
@@ -19,6 +31,7 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
+    "hast-util-from-dom": "^5.0.1",
     "rehype-parse": "^9.0.1",
     "rehype-stringify": "^10.0.1",
     "unified": "^11.0.5",
